@@ -9,10 +9,11 @@ import { useState } from 'react'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
+  
   return (
-    <div className='dark:text-neutral-focus  dark:bg-gradient-to-r from-cyan-900 via-cyan-500 to-cyan-200 relative'>
-      <ThemeDark />
-      <HashRouter className='App '>
+    <div >
+      {/* <ThemeDark /> */}
+      <HashRouter >
         <Routes>
           <Route path='/' element={<InputName />} />
           <Route element={<ProtectedRoutes />}>

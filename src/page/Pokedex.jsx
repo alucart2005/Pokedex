@@ -46,25 +46,25 @@ const Pokedex = ({ isVisible, setIsVisible }) => {
   }
   console.log(pokemon)
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div >
       <div
-        className='absolute top-0 left-0 right-0 bottom-0'
+        
         onClick={() => setIsVisible(false)}
       ></div>
-      <div className='flex flex-col items-center justify-center '>
-        <h1 className='text-6xl'>Welcome ! {userName}</h1>
-        <p className='text-6xl text-center'>to the </p>
-        <p className='text-6xl text-center'> POKEDEX</p>
+      <div >
+        <h1 >Welcome ! {userName}</h1>
+        <p >to the </p>
+        <p > POKEDEX</p>
       </div>
       <input
-        className='h-10 rounded-xl text-center z-50 mt-4'
+        
         list='pokemon'
         name='pokemon'
         placeholder='search pokemon'
         value={pokemonName}
         onChange={(e) => setPokemonName(e.target.value)}
       />
-      <div className='z-[60]'>
+      <div >
         <datalist id='pokemon'>
           {pokemon.map((pok) => (
             <option value={pok.name} key={pok.name}></option>
@@ -72,13 +72,13 @@ const Pokedex = ({ isVisible, setIsVisible }) => {
         </datalist>
       </div>
       <button
-        className='btn btn-outline dark:text-white z-50 mt-4 mb-4'
+       
         onClick={changePokemonName}
       >
         shearch
       </button>
       <select
-        className='input input-bordered input-info w-40 max-w-xs dark:text-white z-50 mb-4'
+        
         onChange={filterType}
         name=''
         id='select'
@@ -100,8 +100,8 @@ const Pokedex = ({ isVisible, setIsVisible }) => {
       />
 
       {/* cierra paginacion */}
-      <section className='mt-6'>
-        <ul className='text-4xl w-50 h-50 md:grid grid-cols-4 gap-5'>
+      <section >
+        <ul >
           {pokemonPagination.map((pokemon) => (
             <CharacterPokemon
               url={pokemon.url ? pokemon.url : pokemon.pokemon.url}

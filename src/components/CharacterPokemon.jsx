@@ -12,12 +12,12 @@ const CharacterPokemon = ({ url }) => {
   console.log(character)
   return (
     <Link to={`/pokedex/${character.id}/`}>
-      <section className='card w-80 glass text-center items-center mb-6 shadow-lg shadow-cyan-500/50'>
-        <figure className='bg-gradient-to-r from-[#7EC6C5] to-[#ABDAC6,#CAE099] w-full'>
+      <section >
+        <figure >
           <img
             src={character.sprites?.other.home.front_default}
             alt='pokemon'
-            className='w-[180px] h-[180px]'
+            
           />
         </figure>
 
@@ -27,20 +27,20 @@ const CharacterPokemon = ({ url }) => {
           {character.types?.[1]?.type.name ? ` / ${type2}` : ''}
         </p>
         <p>Type</p>
-        <div className='grid grid-cols-2  text-center gap-4 m-5'>
-          <div className='text-2xl'>
+        <div >
+          <div >
             <h3>HP</h3>
             <p>{character.stats?.[0].base_stat}</p>
           </div>
-          <div className=' text-2xl'>
+          <div >
             <h3>STACK</h3>
             <p>{character.stats?.[1].base_stat}</p>
           </div>
-          <div className=' text-2xl'>
+          <div >
             <h3>DEFENSE</h3>
             <p>{character.stats?.[2].base_stat}</p>
           </div>
-          <div className='text-2xl'>
+          <div >
             <h3>SPEED</h3>
             <p>{character.stats?.[5].base_stat}</p>
           </div>
