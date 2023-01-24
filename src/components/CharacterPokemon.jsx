@@ -12,40 +12,41 @@ const CharacterPokemon = ({ url }) => {
   console.log(character)
   return (
     <Link to={`/pokedex/${character.id}/`}>
-      <section >
-        <figure >
-          <img
-            src={character.sprites?.other.home.front_default}
-            alt='pokemon'
-            
-          />
-        </figure>
-
-        <h1>{character.name}</h1>
-        <p>
-          {character.types?.[0].type.name}
-          {character.types?.[1]?.type.name ? ` / ${type2}` : ''}
-        </p>
-        <p>Type</p>
-        <div >
-          <div >
-            <h3>HP</h3>
-            <p>{character.stats?.[0].base_stat}</p>
+      <div className='card__chart-container'>
+        <section className='card__chart'>
+          <figure >
+            <img
+              src={character.sprites?.other.home.front_default}
+              alt='pokemon'
+            />
+          </figure>
+          <h1>{character.name}</h1>
+          <p>
+            {character.types?.[0].type.name}
+            {character.types?.[1]?.type.name ? ` / ${type2}` : ''}
+          </p>
+          <p>Type</p>
+          <div className='stats-container' >
+            <div >
+              <h3>HP</h3>
+              <p>{character.stats?.[0].base_stat}</p>
+            </div>
+            <div >
+              <h3>STACK</h3>
+              <p>{character.stats?.[1].base_stat}</p>
+            </div>
+            <div >
+              <h3>DEFENSE</h3>
+              <p>{character.stats?.[2].base_stat}</p>
+            </div>
+            <div >
+              <h3>SPEED</h3>
+              <p>{character.stats?.[5].base_stat}</p>
+            </div>
           </div>
-          <div >
-            <h3>STACK</h3>
-            <p>{character.stats?.[1].base_stat}</p>
-          </div>
-          <div >
-            <h3>DEFENSE</h3>
-            <p>{character.stats?.[2].base_stat}</p>
-          </div>
-          <div >
-            <h3>SPEED</h3>
-            <p>{character.stats?.[5].base_stat}</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
+      
     </Link>
   )
 }
